@@ -126,7 +126,7 @@ ${knowledgeBase}`,
       const chunk = part.choices[0].delta.content;
       fullAnswer += chunk;
       pubsub.publish(EVENTS.PARTIAL_DATA, {
-        partialData: chunk,
+        partialData: fullAnswer,
       });
     }
     return fullAnswer;
